@@ -921,10 +921,10 @@ function apiGrabar(fn, args, claves) {
 function mockApi(fn, args) {
   var tasaMock = { tasa: 853.50, fecha: '2026-09-23', fuente: 'bcv_api', historico: [{ fecha: '2026-09-23', tasa: 853.50 }] };
   var prods = [
-    { codigo: '7501008648076', nombre: 'Cemento Portland 42.5 kg', categoria: 'Materiales', precio_usd: 8.5, costo_usd: 7, stock: 42, stock_min: 10, activo: 1, imagen: '', creado: '2026-09-01' },
-    { codigo: '7501050530103', nombre: 'Pintura Vinil Acrílica 4L', categoria: 'Pintura', precio_usd: 14, costo_usd: 11.5, stock: 6, stock_min: 8, activo: 1, imagen: '', creado: '2026-09-01' },
-    { codigo: 'PR-100', nombre: 'Clavos 2" (caja)', categoria: 'Ferretería', precio_usd: 3.2, costo_usd: 2.4, stock: 30, stock_min: 5, activo: 1, imagen: '', creado: '2026-08-15' },
-    { codigo: 'PR-101', nombre: 'Taladro percutor', categoria: 'Herramientas', precio_usd: 85, costo_usd: 70, stock: 2, stock_min: 1, activo: 1, imagen: '', creado: '2026-07-10' }
+    { codigo: 'MK-001', nombre: 'Labial mate rojo', categoria: 'Labiales', precio_usd: 6.5, costo_usd: 3.2, stock: 40, stock_min: 10, activo: 1, imagen: '', creado: '2026-09-01' },
+    { codigo: 'MK-002', nombre: 'Base líquida tono medio', categoria: 'Bases', precio_usd: 12, costo_usd: 7.5, stock: 8, stock_min: 10, activo: 1, imagen: '', creado: '2026-09-01' },
+    { codigo: 'MK-003', nombre: 'Paleta de sombras 12 tonos', categoria: 'Ojos', precio_usd: 15, costo_usd: 9, stock: 25, stock_min: 6, activo: 1, imagen: '', creado: '2026-08-15' },
+    { codigo: 'MK-004', nombre: 'Rubor en polvo', categoria: 'Rubor', precio_usd: 8, costo_usd: 4.5, stock: 3, stock_min: 5, activo: 1, imagen: '', creado: '2026-07-10' }
   ];
   var map = {
     login: function () { return { ok: true, token: 'demo', usuario: 'admin', nombre: 'Administrador (Demo)', rol: 'admin' }; },
@@ -947,15 +947,15 @@ function mockApi(fn, args) {
     buscarPorCodigo: function () { return null; },
     listarVentas: function () {
       return [
-        { id: 'V1', fecha: '2026-09-23T10:15:00', vendedor: 'admin', empleado_nombre: 'Administrador (Demo)', items: JSON.stringify([{ codigo: 'PR-100', nombre: 'Clavos 2" (caja)', cantidad: 2, precio_usd: 3.2, sub_usd: 6.4 }]), metodo: 'efectivo_usd', total_usd: 6.4, tasa: 853.5, total_ves: 5462.4, nota: '' },
+        { id: 'V1', fecha: '2026-09-23T10:15:00', vendedor: 'admin', empleado_nombre: 'Administrador (Demo)', items: JSON.stringify([{ codigo: 'MK-001', nombre: 'Labial mate rojo', cantidad: 2, precio_usd: 6.5, sub_usd: 13 }]), metodo: 'efectivo_usd', total_usd: 13, tasa: 853.5, total_ves: 11095.5, nota: '' },
         { id: 'V2', fecha: '2026-09-23T11:30:00', vendedor: 'admin', empleado_nombre: 'Administrador (Demo)', items: '[]', metodo: 'transferencia', total_usd: 22.5, tasa: 853.5, total_ves: 19203.75, nota: '' }
       ];
     },
-    listarGastos: function () { return [{ id: 'G1', fecha: '2026-09-22', concepto: 'Combustible camioneta', categoria: 'Transporte', monto_usd: 20, responsable: '', nota: '' }]; },
+    listarGastos: function () { return [{ id: 'G1', fecha: '2026-09-22', concepto: 'Compra de labiales', categoria: 'Mercancía', monto_usd: 20, responsable: '', nota: '' }]; },
     listarUsuarios: function () { return [{ usuario: 'admin', nombre: 'Administrador', rol: 'admin', activo: 1 }, { usuario: 'caja', nombre: 'Cajero', rol: 'empleado', activo: 1 }]; },
-    listarEmpleados: function () { return [{ id: 'E1', nombre: 'Juan Pérez', cargo: 'Albañil', salario_usd: 220, fecha_ingreso: '2026-01-10', activo: 1 }]; },
-    listarSueldos: function () { return [{ id: 'S1', empleado_id: 'E1', empleado_nombre: 'Juan Pérez', periodo: '2026-09', fecha_pago: '', monto_usd: 220, estado: 'pendiente', nota: '' }]; },
-    listarRemodelaciones: function () { return [{ id: 'R1', nombre: 'Remodelación sala', tipo: 'Remodelación', descripcion: 'Pintura y piso', estado: 'En progreso', progreso: 60, fecha_inicio: '2026-08-01', fecha_fin_estimada: '2026-10-15' }]; },
+    listarEmpleados: function () { return [{ id: 'E1', nombre: 'Karelys', cargo: 'Vendedora', salario_usd: 220, fecha_ingreso: '2026-01-10', activo: 1 }]; },
+    listarSueldos: function () { return [{ id: 'S1', empleado_id: 'E1', empleado_nombre: 'Karelys', periodo: '2026-09', fecha_pago: '', monto_usd: 220, estado: 'pendiente', nota: '' }]; },
+    listarRemodelaciones: function () { return [{ id: 'R1', nombre: 'Adecuación del local', tipo: 'Remodelación', descripcion: 'Pintura y estantes', estado: 'En progreso', progreso: 60, fecha_inicio: '2026-08-01', fecha_fin_estimada: '2026-10-15' }]; },
     listarRemodGastos: function () { return []; }
   };
   var f = map[fn];
