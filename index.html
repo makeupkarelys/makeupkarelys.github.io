@@ -4,32 +4,32 @@
   <base target="_top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ec4899">
+  <meta name="theme-color" content="#df2989">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>MakeupKarelys</title>
   <style>
   :root {
-    --prim: #ec4899;
+    --prim: #df2989;
     --prim-2: #a855f7;
     --lila: #a855f7;
-    --grad: linear-gradient(135deg, #ec4899 0%, #d946ef 52%, #a855f7 100%);
-    --prim-os: #fde7f3;
+    --grad: linear-gradient(135deg, #df2989 0%, #c026d3 55%, #a855f7 100%);
+    --prim-os: #fae1ed;
     --ok: #16a34a;
     --ok-os: #e8f7ee;
     --peligro: #e11d48;
     --peligro-os: #fde8ef;
     --avis: #d97706;
     --avis-os: #fdf3e3;
-    --fondo: #fdeaf4;
-    --fondo-2: #f3e8ff;
+    --fondo: #fae1ed;
+    --fondo-2: #f3ddef;
     --tarjeta: #ffffff;
     --texto: #4a1d33;
-    --texto-suave: #a15c80;
-    --borde: #f7d4e6;
+    --texto-suave: #a8507e;
+    --borde: #f5cfe2;
     --radio: 18px;
-    --sombra: 0 1px 3px rgba(168, 85, 247, .10), 0 6px 18px rgba(236, 72, 153, .12);
+    --sombra: 0 1px 3px rgba(168, 85, 247, .10), 0 6px 18px rgba(223, 41, 137, .12);
   }
 
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -49,7 +49,7 @@
     min-height: 100vh; min-height: 100dvh;
     display: flex; align-items: center; justify-content: center;
     padding: 20px;
-    background: linear-gradient(160deg, #f9a8d4 0%, #d946ef 48%, #7e22ce 100%);
+    background: linear-gradient(160deg, #f7a8cf 0%, #df2989 48%, #7e22ce 100%);
   }
   .login-card {
     background: var(--tarjeta); border-radius: 24px;
@@ -83,7 +83,7 @@
     transition: filter .15s, transform .05s;
   }
   .btn:active { transform: scale(.97); }
-  .btn-primario { background: var(--grad); color: #fff; box-shadow: 0 4px 14px rgba(236, 72, 153, .30); }
+  .btn-primario { background: var(--grad); color: #fff; box-shadow: 0 4px 14px rgba(223, 41, 137, .30); }
   .btn-ok { background: var(--ok); color: #fff; }
   .btn-peligro { background: var(--peligro-os); color: var(--peligro); }
   .btn-suave { background: var(--fondo); color: var(--texto); }
@@ -101,7 +101,7 @@
     position: sticky; top: 0; z-index: 40;
     display: flex; align-items: center; justify-content: space-between;
     gap: 10px;
-    background: linear-gradient(90deg, #ec4899, #a855f7);
+    background: linear-gradient(90deg, #df2989, #a855f7);
     color: #fff; padding: calc(10px + env(safe-area-inset-top)) 12px 10px;
     box-shadow: 0 2px 10px rgba(126, 34, 206, .25);
   }
@@ -151,7 +151,7 @@
 
   .gaveta-cab {
     display: flex; align-items: center; gap: 10px;
-    background: linear-gradient(135deg, #ec4899, #a855f7);
+    background: linear-gradient(135deg, #df2989, #a855f7);
     color: #fff; padding: calc(18px + env(safe-area-inset-top)) 16px 14px;
   }
   .gaveta-cab .logo-mini { font-size: 26px; }
@@ -192,7 +192,7 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
   .card-kpi {
-    background: linear-gradient(160deg, #ffffff 0%, #fff0f8 100%);
+    background: linear-gradient(160deg, #ffffff 0%, #fae1ed 100%);
     border: 1px solid var(--borde);
     border-radius: var(--radio); padding: 14px;
     box-shadow: var(--sombra); cursor: pointer;
@@ -211,13 +211,13 @@
   .tabla-envoltura { overflow-x: auto; border: 1px solid var(--borde); border-radius: 12px; -webkit-overflow-scrolling: touch; }
   table.tabla { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 620px; }
   .tabla th {
-    text-align: left; padding: 9px 10px; background: #fdf0f7;
+    text-align: left; padding: 9px 10px; background: #fae1ed;
     color: var(--texto-suave); font-size: 12px; white-space: nowrap;
     border-bottom: 1px solid var(--borde);
   }
   .tabla td { padding: 9px 10px; border-bottom: 1px solid var(--borde); vertical-align: top; }
   .tabla tr:last-child td { border-bottom: 0; }
-  .tabla tr:hover td { background: #fdeaf4; }
+  .tabla tr:hover td { background: #fae1ed; }
   .der { text-align: right; }
   .negrita { font-weight: 700; }
   .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 12.5px; }
@@ -271,7 +271,7 @@
   .resumen-venta {
     display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;
   }
-  .resumen-venta .cajita { background: linear-gradient(160deg, #fff 0%, #fff0f8 100%); border-radius: 12px; padding: 12px; }
+  .resumen-venta .cajita { background: linear-gradient(160deg, #fff 0%, #fae1ed 100%); border-radius: 12px; padding: 12px; }
   .resumen-venta .cajita small { color: var(--texto-suave); display: block; font-size: 12px; font-weight: 600; }
   .resumen-venta .cajita .tot { font-size: 19px; font-weight: 800; }
 
@@ -356,7 +356,7 @@
     border: 1.5px solid var(--borde); background: #fff; border-radius: 999px;
     padding: 6px 12px; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--texto-suave);
   }
-  .cat-chip.sel { background: var(--grad); border-color: #ec4899; color: #fff; }
+  .cat-chip.sel { background: var(--grad); border-color: #df2989; color: #fff; }
 
   /* ============ MODAL ============ */
   .modal { position: fixed; inset: 0; z-index: 60; }
